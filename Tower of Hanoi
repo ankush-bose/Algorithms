@@ -1,4 +1,7 @@
 include<stdio.h>
+
+void shift(int a,int b);
+
  int main()
  {
  return 0;
