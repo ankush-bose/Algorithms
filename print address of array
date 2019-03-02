@@ -1,0 +1,11 @@
+//PRint the address of the array
+
+#include<stdio.h>
+
+int main()
+{
+int arr[5]={1,2,3,4,5},i;
+for(i=0;i<5;i++)
+printf("Address is %p\n",&arr[i]);
+return 0;
+}
