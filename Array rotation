@@ -1,0 +1,37 @@
+//Array rotation by 'd' elements
+
+#include<stdio.h>
+
+int main()
+{
+	int n;
+	printf("Enter the size of Array:\n");
+	scanf("%d",&n);
+	int d,k,l=0,i,arr[n],temp;
+	printf("Enter Value of Array:\n");
+	for(i=0;i<n;i++)
+		scanf("%d",&arr[i]);
+	printf("Enter rotation value d:\n");
+	scanf("%d",&d);
+	d--;
+	for(i=0;i<n;i++)
+	{
+		if(i+d<n){	
+			temp=arr[i+d];
+			arr[i+d]=arr[i];
+			arr[i]=temp;
+			}
+		else
+			{
+			temp=arr[i+d-n];
+			arr[i+d-n]=arr[i];
+			arr[i]=temp;
+
+			}		
+		}
+	printf("The array after rotationis :\n");
+	for(i=0;i<n;i++)
+		printf("%d\t",arr[i]);
+		
+	return 0;
+}
