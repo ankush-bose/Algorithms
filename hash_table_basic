@@ -1,0 +1,64 @@
+#include <stdio.h>
+int arr[16]={};
+void hash(int value){
+    int key=value%16;
+    if(arr[key]!=0)
+     arr[value%16]=value;
+     
+    else{
+     while(arr[key]!=0)
+     key++;
+     if(key>16)        
+     printf("ARRAY OUTOF BOUNDS");
+     else arr[key]=value;
+     
+    }
+    
+}
+
+void search(int value){
+    int key=value%16;
+ if(arr[key]==value)
+  printf("%d\n",arr[key]);
+  else{
+      while(arr[key]!=value && (key<16))
+      key++;
+      }
+      if(arr[key]!=value)
+      printf("NOT FOUND\n");
+      else
+      printf("%d\n",arr[key]);
+  
+}
+
+int main()
+{
+    
+    int i;
+    hash(5);
+    hash(20);
+    hash(11);
+    hash(27);
+    hash(38);
+    hash(49);
+    hash(1);
+   hash(2);
+    hash(3);
+    hash(4);
+    hash(5);
+    hash(5);
+    hash(6);
+    hash(7);
+    hash(8);
+    
+    
+    
+    int j;
+    for(j=0;j<16;j++)
+    printf("%d\n",arr[j]);
+
+        printf("SEARCHING: ...\n");
+        search(5);
+        search(99);
+    return 0;
+}
