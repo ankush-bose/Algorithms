@@ -1,0 +1,27 @@
+
+#include<stdio.h>
+int maxSubArray(int arr[], int N);
+int MAX( int num1, int num2);
+int main(){
+	int ar[5]={11,-2,-3,4,5};
+	
+	int max=maxSubArray(ar,5);
+	printf("\n THe maximum value is %d", max);
+	return 0;
+}
+
+int maxSubArray(int arr[], int N)	{
+	int max=arr[0];
+	int sum[N],i;
+	sum[0]=arr[0];
+	for(i=1; i<N; i++){
+		sum[i]=MAX(sum[i-1]+arr[i],arr[i]);
+		if(max< sum[i])
+			max=sum[i];
+	}
+	return max;
+}
+
+int MAX(int num1, int num2){
+	return num1 >num2 ? num1 : num2;
+}
